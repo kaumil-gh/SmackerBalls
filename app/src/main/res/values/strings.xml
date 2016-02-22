@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SmackerBalls</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="Tap">Tap to Continue</string>
+    <string name="Play_Single_player">Play Single-Player</string>
+    <string name="PSP">Play Single-Player</string>
+    <string name="Play_Single_Player">Play Single-Player</string>
+    <string name="Play_Multi_Player">Play Multi-Player</string>
+    <string name="SettingsButton">Settings</string>
+    <string name="HelpButton">Help</string>
+</resources>
