@@ -10,4 +10,5 @@
     <string name="Play_Multi_Player">Play Multi-Player</string>
     <string name="SettingsButton">Settings</string>
     <string name="HelpButton">Help</string>
+    <string name="title_activity_connectivity_module">ConnectivityModule</string>
 </resources>
