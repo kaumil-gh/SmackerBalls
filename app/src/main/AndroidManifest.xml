@@ -10,15 +10,6 @@
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity android:name=".HomeActivity" />
         <activity android:name=".SinglePLayerScreen" />
-        <activity
-            android:name=".ConnectivityModule"
-            android:label="@string/title_activity_connectivity_module"
-            android:parentActivityName=".HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.dell.smackerballs.HomeActivity" />
-        </activity>
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -33,6 +24,32 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".HomeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.dell.smackerballs.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".Instructions"
+            android:label="@string/title_activity_instructions"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.dell.smackerballs.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".ConnectivityModule"
+            android:label="@string/title_activity_connectivity_module"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.dell.smackerballs.HomeActivity" />
         </activity>
     </application>
 
