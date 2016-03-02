@@ -24,5 +24,6 @@
         android:clickable="true"
         android:enabled="true"
         android:focusable="false"
-        android:theme="@style/Theme.AppCompat.NoActionBar" />
+        android:theme="@style/Theme.AppCompat.NoActionBar"
+        android:background="@android:color/transparent" />
 </RelativeLayout>

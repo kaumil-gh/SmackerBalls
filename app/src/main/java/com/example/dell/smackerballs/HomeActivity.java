@@ -32,7 +32,7 @@ public class HomeActivity extends AppCompatActivity {
 
                     @Override
                     public void onClick(View v) {
-                        startActivity(new Intent(getApplicationContext(), SinglePLayerScreen.class));
+                        startActivity(new Intent(getApplicationContext(), SinglePlayerScreen.class));
                     }
                 });
         button2.setOnClickListener(
