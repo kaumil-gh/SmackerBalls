@@ -13,7 +13,7 @@ import android.view.Window;
 import static android.graphics.Color.TRANSPARENT;
 import static android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN;
 
-public class FullScreenActivity extends AppCompatActivity {
+public class FullscreenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

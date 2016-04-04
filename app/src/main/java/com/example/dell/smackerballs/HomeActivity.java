@@ -1,6 +1,5 @@
 package com.example.dell.smackerballs;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,7 +31,7 @@ public class HomeActivity extends AppCompatActivity {
 
                     @Override
                     public void onClick(View v) {
-                        startActivity(new Intent(getApplicationContext(), SinglePLayerScreen.class));
+                        startActivity(new Intent(getApplicationContext(),SinglePLayerScreen.class));
                     }
                 });
         button2.setOnClickListener(
