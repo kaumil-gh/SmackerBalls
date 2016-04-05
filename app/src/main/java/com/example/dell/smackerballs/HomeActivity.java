@@ -31,7 +31,7 @@ public class HomeActivity extends AppCompatActivity {
 
                     @Override
                     public void onClick(View v) {
-                        startActivity(new Intent(getApplicationContext(),SinglePLayerScreen.class));
+                        startActivity(new Intent(getApplicationContext(),Single_Player.class));
                     }
                 });
         button2.setOnClickListener(
