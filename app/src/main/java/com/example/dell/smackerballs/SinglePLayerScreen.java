@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.app.Activity;
 
 public class SinglePLayerScreen extends AppCompatActivity implements OnTouchListener {
 
@@ -54,4 +55,6 @@ public class SinglePLayerScreen extends AppCompatActivity implements OnTouchList
         return true;
     }
 }
+
+
 
