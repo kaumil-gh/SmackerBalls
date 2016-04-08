@@ -58,5 +58,14 @@ public class HomeActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), Instructions.class));
                     }
                 });
+
+
+        // for hide the status bar
+        View decorView = getWindow().getDecorView();
+        // Hide the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
+
     }
 }

@@ -12,6 +12,16 @@
     <string name="HelpButton">Help</string>
     <string name="title_activity_connectivity_module">ConnectivityModule</string>
     <string name="title_activity_instructions">Instructions</string>
+    <string name="My_In">
+	"Welcome to SmackerBalls!.\n\n"
+
+	"Save the Ball from sinking and Break the bricks to get a high score.\n"
+	"How to Play?\n"
+	"Swipe your paddle by holding or tapping on left and right of screen."
+	"Make sure you reshoot the ball from such an angle as to shoot maximum bricks."
+	"Tap on screen to start the game. You get 3 lives per game."
+	"So start playing and emerge as the ultimate winner."
+	</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
