@@ -9,8 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity android:name=".HomeActivity" />
-        <activity android:name=".Single_Player" />
+
         <activity android:name=".SinglePLayerScreen" />
+        <activity android:name=".Single_Player"/>
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.

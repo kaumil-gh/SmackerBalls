@@ -14,10 +14,14 @@ import android.media.SoundPool;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.PopupWindow;
 
 import java.io.IOException;
 
@@ -28,7 +32,7 @@ public class Single_Player extends Activity {
     // and respond to screen touches as well
     BreakoutView breakoutView;
     // The size of the screen in pixels
-
+    static view v;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +47,11 @@ public class Single_Player extends Activity {
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
+        try{
+            v = (view) View.inflate(Single_Player.this, R.layout.popup, null);
+        }catch(Exception e){
+            System.out.println(" ERR " + e.getMessage()+e.toString());
+        }
 
     }
 
@@ -160,7 +169,6 @@ public class Single_Player extends Activity {
             }
             createBricksAndRestart();
         }
-
         public void createBricksAndRestart(){
 
             // Put the ball back to the start
@@ -187,6 +195,10 @@ public class Single_Player extends Activity {
 
 
         }
+
+
+
+
 
         @Override
         public void run() {
@@ -256,10 +268,32 @@ public class Single_Player extends Activity {
                 soundPool.play(loseLifeID, 1, 1, 0, 0, 1);
 
                 if(lives == 0){
+
                     paused = true;
                     // Has the player lost?
+                   // popup
+
+                   /* final PopupWindow popupWindow = new PopupWindow(
+                            v,
+                            ViewGroup.LayoutParams.WRAP_CONTENT,
+                            ViewGroup.LayoutParams.WRAP_CONTENT);
+
+                    Button btnDismiss = (Button)findViewById(R.id.dismiss);
+                    btnDismiss.setOnClickListener(new Button.OnClickListener(){
+
+                        @Override
+                        public void onClick(View v) {
+                            // TODO Auto-generated method stub
+                            popupWindow.dismiss();
+                        }});
+
+                    popupWindow.showAtLocation((View) getParent(), 20, 50, -30);
+                    //popup over
+                    */
+
                     if(lives <= 0){
                         paint.setTextSize(90);
+
                         paint.setColor(Color.argb(255, 255, 255, 255));
                         canvas.drawText("YOU HAVE LOST!", 10,20, paint);
 
@@ -441,5 +475,11 @@ public class Single_Player extends Activity {
 
 
 
+}
+
+class view extends View {
+    public view(Context context) {
+        super(context);
+    }
 }
 // This is the end of the BreakoutGame class
