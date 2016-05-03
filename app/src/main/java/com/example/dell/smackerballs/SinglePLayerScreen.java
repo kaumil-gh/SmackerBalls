@@ -22,7 +22,7 @@ public class SinglePLayerScreen extends AppCompatActivity implements OnTouchList
 /*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCr2eate(savedInstanceState);
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_screen_player);
         slider = (ImageView)findViewById(R.id.SliderImage);
         slider.setOnTouchListener(this);

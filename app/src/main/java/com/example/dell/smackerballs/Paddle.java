@@ -4,7 +4,7 @@ import android.graphics.RectF;
 public class Paddle {
 
     // RectF is an object that holds four coordinates - just what we need
-    private RectF rect;
+    public RectF rect;
 
     // How long and high our paddle will be
     private float length;
@@ -49,6 +49,17 @@ public class Paddle {
     // defines our paddle available in BreakoutView class
     public RectF getRect(){
         return rect;
+    }
+    /*public RectF getRect(){
+        return this.rect;
+    }*/
+    private boolean isVisible;
+    public void setInvisible(){
+        isVisible = true;
+    }
+
+    public boolean getVisibility(){
+        return isVisible;
     }
 
     // This method will be used to change/set if the paddle is going left, right or nowhere

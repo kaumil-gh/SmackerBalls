@@ -269,7 +269,7 @@ public class Single_Player extends Activity {
             }
 
             // If the ball hits right wall bounce
-            if(ball.getRect().right > screenX - 10){
+            if(ball.getRect().right > screenX - 20){
                 ball.reverseXVelocity();
                 ball.clearObstacleX(screenX - 22);
                 soundPool.play(beep3ID, 1, 1, 0, 0, 1);
