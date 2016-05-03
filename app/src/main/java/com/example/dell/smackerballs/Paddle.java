@@ -18,6 +18,8 @@ public class Paddle {
 
     // This will hold the pixels per second speedthat the paddle will move
     private float paddleSpeed;
+    private float screenx;
+    private float screeny;
 
     // Which ways can the paddle move
     public final int STOPPED = 0;
@@ -32,23 +34,30 @@ public class Paddle {
     // in the screen width and height
     public Paddle(int screenX, int screenY){
         // 130 pixels wide and 20 pixels high
-        length = 130;
-        height = 20;
+        screenx = screenX;
+        screeny = screenY;
+        length = 100;
+        height = 25;
 
         // Start paddle in roughly the sceen centre
         x = screenX / 2;
-        y = screenY - 20;
+        y = screenY - 120;
 
         rect = new RectF(x, y, x + length, y + height);
 
         // How fast is the paddle in pixels per second
         paddleSpeed = 350;
+        if(screenX>screenY) {
+            length *=2;
+            paddleSpeed *= 3;
+        }
+
     }
 
     // This is a getter method to make the rectangle that
     // defines our paddle available in BreakoutView class
     public RectF getRect(){
-        return rect;
+        return this.rect;
     }
     /*public RectF getRect(){
         return this.rect;
@@ -72,11 +81,14 @@ public class Paddle {
     // contained in rect if necessary
     public void update(long fps){
         if(paddleMoving == LEFT){
-            x = x - paddleSpeed / fps;
+            if(x-paddleSpeed/fps >0)
+                x = x - paddleSpeed / fps;
+
         }
 
         if(paddleMoving == RIGHT){
-            x = x + paddleSpeed / fps;
+            if(x+length+paddleSpeed/fps <screenx)
+                 x = x + paddleSpeed / fps;
         }
 
         rect.left = x;

@@ -24,6 +24,15 @@ public class ConnectivityModule extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
+        // for hide the status bar
+        View decorView = getWindow().getDecorView();
+        // Hide the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 

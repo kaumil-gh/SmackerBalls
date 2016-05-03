@@ -17,6 +17,7 @@ import android.view.Display;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
 
 import java.io.IOException;
 
@@ -35,6 +36,13 @@ public class Single_Player extends Activity {
         // Initialize gameView and set it as the view
         breakoutView = new BreakoutView(this);
         setContentView(breakoutView);
+
+        // for hide the status bar
+        View decorView = getWindow().getDecorView();
+        // Hide the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
 
     }
 
@@ -158,16 +166,16 @@ public class Single_Player extends Activity {
             // Put the ball back to the start
             ball.reset(screenX, screenY);
 
-            int brickWidth = screenX / 8;
-            int brickHeight = screenY / 10;
+            int brickWidth = screenX / 16;
+            int brickHeight = screenY /20;
 
             // Build a wall of bricks
             numBricks = 0;
 
 
 
-            for(int column = 0; column < 8; column ++ ){
-                for(int row = 0; row < 3; row ++ ){
+            for(int column = 0; column < 16; column++ ){
+                for(int row = 0; row < 6; row +=2 ){
                     bricks[numBricks] = new Brick(row, column, brickWidth, brickHeight);
                     numBricks ++;
                 }
@@ -241,14 +249,21 @@ public class Single_Player extends Activity {
             // And deduct a life
             if(ball.getRect().bottom > screenY){
                 ball.reverseYVelocity();
-                ball.clearObstacleY(screenY - 2);
+                ball.clearObstacleY(screenY - 5);
 
-                // Lose a life
+                //Lose a life
                 lives --;
                 soundPool.play(loseLifeID, 1, 1, 0, 0, 1);
 
                 if(lives == 0){
                     paused = true;
+                    // Has the player lost?
+                    if(lives <= 0){
+                        paint.setTextSize(90);
+                        paint.setColor(Color.argb(255, 255, 255, 255));
+                        canvas.drawText("YOU HAVE LOST!", 10,20, paint);
+
+                    }
                     createBricksAndRestart();
                 }
 
@@ -278,6 +293,12 @@ public class Single_Player extends Activity {
             // Pause if cleared screen
             if(score == numBricks * 10){
                 paused = true;
+                // Has the player cleared the screen?
+                if(score == numBricks * 10){
+                    paint.setTextSize(90);
+                    paint.setColor(Color.argb(255, 255, 255, 255));
+                    canvas.drawText("YOU HAVE WON!", 10,screenY/2, paint);
+                }
                 createBricksAndRestart();
             }
 
@@ -293,20 +314,21 @@ public class Single_Player extends Activity {
 
 
                 // Draw the background color
-                canvas.drawColor(Color.argb(255,  26, 128, 255));
+                canvas.drawColor(Color.argb(255, 0, 0, 0));
 
                 // Choose the brush color for drawing
-                paint.setColor(Color.argb(255,  0, 255, 225));
+                paint.setColor(Color.argb(255, 243, 10, 148));
 
                 // Draw the paddle
                 canvas.drawRect(paddle.getRect(), paint);
 
                 // Draw the ball
+                paint.setColor(Color.argb(255,  248, 90, 20));
                 canvas.drawRect(ball.getRect(), paint);
 
                 // Change the brush color for drawing
-                paint.setColor(Color.argb(255,  249, 129, 0));
 
+                paint.setColor(Color.argb(255,  0, 150, 255));
                 // Draw the bricks
                 // Draw the bricks if visible
                 for(int i = 0; i < numBricks; i++){
@@ -326,13 +348,16 @@ public class Single_Player extends Activity {
                 // Has the player cleared the screen?
                 if(score == numBricks * 10){
                     paint.setTextSize(90);
+                    paint.setColor(Color.argb(255, 255, 255, 255));
                     canvas.drawText("YOU HAVE WON!", 10,screenY/2, paint);
                 }
 
                 // Has the player lost?
                 if(lives <= 0){
                     paint.setTextSize(90);
+                    paint.setColor(Color.argb(255, 255, 255, 255));
                     canvas.drawText("YOU HAVE LOST!", 10,screenY/2, paint);
+
                 }
 
                 // Draw everything to the screen
@@ -413,6 +438,7 @@ public class Single_Player extends Activity {
     }
 
     // The size of the screen in pixels
+
 
 
 }

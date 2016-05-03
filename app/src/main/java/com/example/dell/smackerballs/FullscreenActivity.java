@@ -34,5 +34,6 @@ public class FullscreenActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),HomeActivity.class));
                     }
                 });
+
     }
 }
