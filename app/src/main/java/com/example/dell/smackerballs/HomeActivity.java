@@ -31,17 +31,10 @@ public class HomeActivity extends AppCompatActivity {
 
                     @Override
                     public void onClick(View v) {
-                        startActivity(new Intent(getApplicationContext(),Single_Player.class));
+                        startActivity(new Intent(getApplicationContext(),Level_screen.class));
                     }
                 });
-        /*button2.setOnClickListener(
-                new Button.OnClickListener() {
 
-                    @Override
-                    public void onClick(View v) {
-                        startActivity(new Intent(getApplicationContext(), ConnectivityModule.class));
-                    }
-                });*/
         button3.setOnClickListener(
                 new Button.OnClickListener() {
 
