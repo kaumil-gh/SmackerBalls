@@ -25,7 +25,7 @@ import android.widget.PopupWindow;
 
 import java.io.IOException;
 
-public class Single_Player extends Activity {
+public class Level2 extends Activity {
 
     // gameView will be the view of the game
     // It will also hold the logic of the game
@@ -47,7 +47,7 @@ public class Single_Player extends Activity {
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
-        
+
     }
 
     // Here is our implementation of GameView
@@ -266,7 +266,7 @@ public class Single_Player extends Activity {
 
                     paused = true;
                     // Has the player lost?
-                   // popup
+                    // popup
 
                    /* final PopupWindow popupWindow = new PopupWindow(
                             v,

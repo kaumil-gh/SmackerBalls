@@ -22,7 +22,7 @@ public class HomeActivity extends AppCompatActivity {
         Button button4;
 
         button1  = (Button)findViewById(R.id.button1);
-        button2  = (Button)findViewById(R.id.button2);
+        //button2  = (Button)findViewById(R.id.button2);
         button3  = (Button)findViewById(R.id.button3);
         button4  = (Button)findViewById(R.id.button4);
 
@@ -31,17 +31,10 @@ public class HomeActivity extends AppCompatActivity {
 
                     @Override
                     public void onClick(View v) {
-                        startActivity(new Intent(getApplicationContext(),Single_Player.class));
+                        startActivity(new Intent(getApplicationContext(),Level_screen.class));
                     }
                 });
-        button2.setOnClickListener(
-                new Button.OnClickListener() {
 
-                    @Override
-                    public void onClick(View v) {
-                        startActivity(new Intent(getApplicationContext(), ConnectivityModule.class));
-                    }
-                });
         button3.setOnClickListener(
                 new Button.OnClickListener() {
 
@@ -58,5 +51,14 @@ public class HomeActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), Instructions.class));
                     }
                 });
+
+
+        // for hide the status bar
+        View decorView = getWindow().getDecorView();
+        // Hide the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
+
     }
 }
