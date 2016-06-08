@@ -32,13 +32,13 @@ public class Paddle {
     // This the the constructor method
     // When we create an object from this class we will pass
     // in the screen width and height
-    public Paddle(int screenX, int screenY){
+    public Paddle(int screenX, int screenY, int speed){
         // 130 pixels wide and 20 pixels high
         screenx = screenX;
         screeny = screenY;
         length = 100;
         height = 25;
-
+        paddleSpeed = speed;
         // Start paddle in roughly the sceen centre
         x = screenX / 2;
         y = screenY - 120;
@@ -46,7 +46,7 @@ public class Paddle {
         rect = new RectF(x, y, x + length, y + height);
 
         // How fast is the paddle in pixels per second
-        paddleSpeed = 350;
+
         if(screenX>screenY) {
             length *=2;
             paddleSpeed *= 3;

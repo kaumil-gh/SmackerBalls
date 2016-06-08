@@ -2,6 +2,7 @@ package com.example.dell.smackerballs;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.graphics.Canvas;
@@ -14,14 +15,10 @@ import android.media.SoundPool;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.PopupWindow;
 
 import java.io.IOException;
 
@@ -127,9 +124,9 @@ public class Level6 extends Activity {
 
             screenX = size.x;
             screenY = size.y;
-            paddle = new Paddle(screenX, screenY);
+            paddle = new Paddle(screenX, screenY, 350);
             // Create a ball
-            ball = new Ball(screenX, screenY);
+            ball = new Ball(screenX, screenY, -300, -500);
 
 
             // Load the sounds
@@ -169,20 +166,41 @@ public class Level6 extends Activity {
             // Put the ball back to the start
             ball.reset(screenX, screenY);
 
-            int brickWidth = screenX / 16;
-            int brickHeight = screenY /20;
+            int brickWidth = screenX / 24;
+            int brickHeight = screenY /34;
 
             // Build a wall of bricks
+
+
             numBricks = 0;
-
-
-
-            for(int column = 0; column < 16; column++ ){
-                for(int row = 0; row < 6; row +=2 ){
-                    bricks[numBricks] = new Brick(row, column, brickWidth, brickHeight);
-                    numBricks ++;
+            int sp =11;
+            int a = 1;
+            int row;
+            int  column=0;
+            for( row = 0; row<9;row++)
+            {
+                column =sp+1;
+                for(;column<=sp+a;column++)
+                {
+                    bricks[numBricks++] = new Brick(row, column, brickWidth, brickHeight);
                 }
+                sp--;
+                a+=2;
+
             }
+            sp++;
+            a-=2;
+            for(;row<19;row++)
+            {
+                sp++;
+                a-=2;
+                for(column = sp +1;column<= a+sp;column++)
+                {
+                    bricks[numBricks++] = new Brick(row, column, brickWidth, brickHeight);
+                }
+
+            }
+
             // Reset scores and lives
             score = 0;
             lives = 3;
@@ -265,27 +283,7 @@ public class Level6 extends Activity {
                 if(lives == 0){
 
                     paused = true;
-                    // Has the player lost?
-                    // popup
-
-                   /* final PopupWindow popupWindow = new PopupWindow(
-                            v,
-                            ViewGroup.LayoutParams.WRAP_CONTENT,
-                            ViewGroup.LayoutParams.WRAP_CONTENT);
-
-                    Button btnDismiss = (Button)findViewById(R.id.dismiss);
-                    btnDismiss.setOnClickListener(new Button.OnClickListener(){
-
-                        @Override
-                        public void onClick(View v) {
-                            // TODO Auto-generated method stub
-                            popupWindow.dismiss();
-                        }});
-
-                    popupWindow.showAtLocation((View) getParent(), 20, 50, -30);
-                    //popup over
-                    */
-
+                    startActivity(new Intent(getApplicationContext(), Level6_lose.class));
                     if(lives <= 0){
                         paint.setTextSize(90);
 
@@ -322,6 +320,7 @@ public class Level6 extends Activity {
             // Pause if cleared screen
             if(score == numBricks * 10){
                 paused = true;
+                startActivity(new Intent(getApplicationContext(), Level6_won.class));
                 // Has the player cleared the screen?
                 if(score == numBricks * 10){
                     paint.setTextSize(90);

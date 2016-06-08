@@ -11,11 +11,11 @@ public class Ball {
     float ballWidth = 10;
     float ballHeight = 10;
 
-    public Ball(int screenX, int screenY){
+    public Ball(int screenX, int screenY, int vx, int vy){
 
         // Start the ball travelling straight up at 100 pixels per second
-        xVelocity = -300;
-        yVelocity = -500;
+        xVelocity = vx;
+        yVelocity = vy;
 
         // Place the ball in the centre of the screen at the bottom
         // Make it a 10 pixel x 10 pixel square

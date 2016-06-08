@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#0d1957">
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/retry1"
+        android:id="@+id/Retry"
+        android:layout_marginBottom="179dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#fdfbfb"
+        android:background="@android:color/transparent"
+        android:textSize="25sp" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/home1"
+        android:id="@+id/Home"
+        android:textColor="#fffefe"
+        android:background="@android:color/transparent"
+        android:textSize="25sp"
+        android:layout_alignTop="@+id/Retry"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="52dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="160dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/you_lost_try_again"
+        android:id="@+id/YouLost"
+        android:textColor="#ece2e2"
+        android:textSize="70sp"
+        android:textAlignment="center"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp" />
+</RelativeLayout>

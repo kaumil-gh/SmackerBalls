@@ -177,4 +177,18 @@
     <string name="SliderImage">SliderImage</string>
     <string name="BallBall">BallBall</string>
     <string name="title_activity_level">Level</string>
+    <string name="you_lost_try_again">You Lost</string>
+    <string name="home1">Home</string>
+    <string name="retry1">Retry</string>
+    <string name="next1">Next</string>
+    <string name="you_won">You Won</string>
+    <string name="mode_1">mode 1</string>
+    <string name="mode_2">mode 2</string>
+    <string name="mode_3">mode 3</string>
+    <string name="mode_4">mode 4</string>
+    <string name="mode_5">mode 5</string>
+    <string name="mode_6">mode 6</string>
+    <string name="mode_7">mode 7</string>
+    <string name="mode_8">mode 8</string>
+    <string name="mode_9">mode 9</string>
 </resources>

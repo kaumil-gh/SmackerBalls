@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#151277">
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/retry1"
+        android:id="@+id/Retry"
+        android:layout_marginBottom="179dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"
+        android:background="@android:color/transparent"
+        android:textSize="25sp" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/next1"
+        android:id="@+id/Next"
+        android:layout_marginTop="46dp"
+        android:layout_alignTop="@+id/Retry"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffff"
+        android:background="@android:color/transparent"
+        android:textSize="25sp" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/home1"
+        android:id="@+id/Home"
+        android:layout_below="@+id/Next"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#fefefe"
+        android:background="@android:color/transparent"
+        android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="110dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/you_won"
+        android:id="@+id/YouWon"
+        android:textColor="#ffffff"
+        android:textSize="60sp"
+        android:layout_marginTop="113dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center" />
+</RelativeLayout>

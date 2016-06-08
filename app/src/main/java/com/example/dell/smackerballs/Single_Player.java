@@ -14,14 +14,10 @@ import android.media.SoundPool;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.PopupWindow;
 
 import java.io.IOException;
 
@@ -127,9 +123,9 @@ public class Single_Player extends Activity {
 
             screenX = size.x;
             screenY = size.y;
-            paddle = new Paddle(screenX, screenY);
+            paddle = new Paddle(screenX, screenY, 350);
             // Create a ball
-            ball = new Ball(screenX, screenY);
+            ball = new Ball(screenX, screenY, -300, -500);
 
 
             // Load the sounds

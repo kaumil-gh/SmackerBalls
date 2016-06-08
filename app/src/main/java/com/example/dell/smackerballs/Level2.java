@@ -2,6 +2,7 @@ package com.example.dell.smackerballs;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.graphics.Canvas;
@@ -14,14 +15,10 @@ import android.media.SoundPool;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.PopupWindow;
 
 import java.io.IOException;
 
@@ -127,9 +124,9 @@ public class Level2 extends Activity {
 
             screenX = size.x;
             screenY = size.y;
-            paddle = new Paddle(screenX, screenY);
+            paddle = new Paddle(screenX, screenY, 350);
             // Create a ball
-            ball = new Ball(screenX, screenY);
+            ball = new Ball(screenX, screenY, -300, -500);
 
 
             // Load the sounds
@@ -169,20 +166,39 @@ public class Level2 extends Activity {
             // Put the ball back to the start
             ball.reset(screenX, screenY);
 
-            int brickWidth = screenX / 16;
-            int brickHeight = screenY /20;
+            int brickWidth = screenX / 17;
+            int brickHeight = screenY /21;
 
             // Build a wall of bricks
             numBricks = 0;
+            int sp =-1;
+            int a = 8;
+
+            for(int row = 0; row<=20;row++)
+            {
+                int column;
+                for( column = 0; column <=a ;column++)
+                {
+                    bricks[numBricks++] = new Brick(row, column, brickWidth, brickHeight);
+
+                }
+                column += sp;
+                for(;column<17;column++)
+                {
+                    bricks[numBricks++] = new Brick(row, column, brickWidth, brickHeight);
+
+                }
+                sp+=2;
+                a--;
+            }
 
 
-
-            for(int column = 0; column < 16; column++ ){
+          /*  for(int column = 0; column < 16; column++ ){
                 for(int row = 0; row < 6; row +=2 ){
                     bricks[numBricks] = new Brick(row, column, brickWidth, brickHeight);
                     numBricks ++;
                 }
-            }
+            }*/
             // Reset scores and lives
             score = 0;
             lives = 3;
@@ -265,26 +281,7 @@ public class Level2 extends Activity {
                 if(lives == 0){
 
                     paused = true;
-                    // Has the player lost?
-                    // popup
-
-                   /* final PopupWindow popupWindow = new PopupWindow(
-                            v,
-                            ViewGroup.LayoutParams.WRAP_CONTENT,
-                            ViewGroup.LayoutParams.WRAP_CONTENT);
-
-                    Button btnDismiss = (Button)findViewById(R.id.dismiss);
-                    btnDismiss.setOnClickListener(new Button.OnClickListener(){
-
-                        @Override
-                        public void onClick(View v) {
-                            // TODO Auto-generated method stub
-                            popupWindow.dismiss();
-                        }});
-
-                    popupWindow.showAtLocation((View) getParent(), 20, 50, -30);
-                    //popup over
-                    */
+                    startActivity(new Intent(getApplicationContext(), Level2_lose.class));
 
                     if(lives <= 0){
                         paint.setTextSize(90);
@@ -323,6 +320,7 @@ public class Level2 extends Activity {
             if(score == numBricks * 10){
                 paused = true;
                 // Has the player cleared the screen?
+                startActivity(new Intent(getApplicationContext(), Level2_won.class));
                 if(score == numBricks * 10){
                     paint.setTextSize(90);
                     paint.setColor(Color.argb(255, 255, 255, 255));

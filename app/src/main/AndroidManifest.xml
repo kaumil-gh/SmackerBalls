@@ -21,6 +21,29 @@
         <activity android:name=".Level7" />
         <activity android:name=".Level8" />
         <activity android:name=".Level9" />
+        <activity android:name=".Level1_lose"
+            android:parentActivityName=".HomeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.dell.smackerballs.HomeActivity" />
+        </activity>/>
+        <activity android:name=".Level1_won" />
+        <activity android:name=".Level2_lose" />
+        <activity android:name=".Level2_won" />
+        <activity android:name=".Level3_lose" />
+        <activity android:name=".Level3_won" />
+        <activity android:name=".Level4_lose" />
+        <activity android:name=".Level4_won" />
+        <activity android:name=".Level5_lose" />
+        <activity android:name=".Level5_won" />
+        <activity android:name=".Level6_lose" />
+        <activity android:name=".Level6_won" />
+        <activity android:name=".Level7_lose" />
+        <activity android:name=".Level7_won" />
+        <activity android:name=".Level8_lose" />
+        <activity android:name=".Level8_won" />
+        <activity android:name=".Level9_lose" />
+        <activity android:name=".Level9_won" />
         <!--
              ATTENTION: This was auto-generated to11 add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -63,7 +86,8 @@
                 android:value="com.example.dell.smackerballs.HomeActivity" />
         </activity>
         <activity android:name=".Level_screen" />
-        <activity android:name=".Level1"></activity>
+        <activity android:name=".Level1" />
+        <activity android:name=".Level1_won"></activity>
     </application>
 
 </manifest>
